@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Save, Download, Upload, Calendar, AlertCircle, CheckCircle2, Clock, FileText } from 'lucide-react';
 
 const ChecklistConvocatoria966 = () => {
@@ -128,11 +128,10 @@ const ChecklistConvocatoria966 = () => {
     }
     
     if (property === 'estado' || property === 'desarrollo' || property === 'revision') {
-      const fechaProperty = 'fecha';
       if (subsection) {
-        newFormData[section][subsection][field][fechaProperty] = new Date().toLocaleDateString();
+        newFormData[section][subsection][field]['fecha'] = new Date().toLocaleDateString();
       } else {
-        newFormData[section][field][fechaProperty] = new Date().toLocaleDateString();
+        newFormData[section][field]['fecha'] = new Date().toLocaleDateString();
       }
     }
     
@@ -535,7 +534,7 @@ const ChecklistConvocatoria966 = () => {
                 <StatusField section="organizacionesLocalesDocs" subsection="org1" field="firmaAnexo1" label="Firma Anexo 1 (Carta Unificada)" />
                 <StatusField section="organizacionesLocalesDocs" subsection="org1" field="documentosEspecificos" label="Documentos específicos según tipo" />
               </div>
-              </div>
+            </div>
           </div>
         )}
 
@@ -562,8 +561,8 @@ const ChecklistConvocatoria966 = () => {
             <div className="space-y-6">
               <div>
                 <h3 className="text-lg font-medium mb-3">Verificación Técnica</h3>
-                <div className="space-y-3">
-                  <StatusField section="verificacionTecnica" field="coherenciaEjes" label="Coherencia con ejes temáticos convocatoria" />
+                <div className="space-y-3"></div>
+                <StatusField section="verificacionTecnica" field="coherenciaEjes" label="Coherencia con ejes temáticos convocatoria" />
                   <StatusField section="verificacionTecnica" field="objetivosEspecificos" label="Objetivos específicos claramente definidos" />
                   <StatusField section="verificacionTecnica" field="metodologia" label="Metodología detallada" />
                   <StatusField section="verificacionTecnica" field="resultadosEsperados" label="Resultados esperados cuantificables" />
